@@ -1,0 +1,24 @@
+name: random
+
+on:
+  push:
+    branches:
+      -master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      -name: checkout to repository
+        uses: actions/checkout@v2
+      -name: install and build
+        runs: npm ci
+      -name: publish to registry
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@krish'
+      -run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
