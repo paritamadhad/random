@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout to repository
-        uses: actions/checkout@v2
+        uses: action/checkout@v2
       - name: install and build
         run: npm ci
       - name: publish to registry
