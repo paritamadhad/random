@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "publishConfig": {
-    "registry": "httpa://npm.pkg.github.com/@mnvs"
+    "registry": "httpa://npm.pkg.github.com/@paritamadhad"
   },
   "files": [
     "dist"
